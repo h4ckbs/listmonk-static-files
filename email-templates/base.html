@@ -1,0 +1,123 @@
+{{ define "header" }}
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+        <base target="_blank">
+
+        <style>
+            body {
+                background-color: #1e222a;
+                font-family: "Fira Code", Monaco, Consolas, Ubuntu Mono, monospace;
+                font-size: 15px;
+                line-height: 26px;
+                margin: 0;
+                color: #FFFFFF;
+            }
+
+            .wrap {
+                background-color: #1e222a;
+                border: 2px solid #48DB7F;
+                padding: 30px;
+                max-width: 525px;
+                margin: 0 auto;
+            }
+
+            .header {
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+            }
+
+            .footer {
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+            }
+                .footer a {
+                    color: #888;
+                }
+
+            .gutter {
+                padding: 30px;
+            }
+            .button {
+                background: #48DB7F;
+                color: #000 !important;
+                display: inline-block;
+                padding: 10px 30px;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            img {
+                max-width: 100%;
+            }
+
+            a {
+                color: #FFF;
+		text-decoration: underline;
+            }
+            @media screen and (max-width: 600px) {
+                .wrap {
+                    max-width: auto;
+                }
+                .gutter {
+                    padding: 10px;
+                }
+            }
+            .header__logo {
+                display: flex;
+                flex: 1;
+                max-width: 589px;
+                margin: 0 auto 10px auto;
+            }
+            .header__vert_lines {
+                content: '';
+                background: repeating-linear-gradient(90deg, #48DB7F, #48DB7F 2px, transparent 0, transparent 10px);
+                display: block;
+                width: 100%;
+            }
+            .header__logo a {
+                flex: 0 0 auto;
+                max-width: 100%;
+                text-decoration: none;
+            }
+            .logo {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                background: #48DB7F;
+                color: black;
+                padding: 5px 10px;
+            }
+        </style>
+    </head>
+<body style="background-color: #1e222a;">
+    <div class="gutter">&nbsp;</div>
+    <div class="header__logo">
+      <a href="https://hack.bs.it" target="_blank">
+        <div class="logo">
+          hack.bs
+        </div>
+      </a>
+      <div class="header__vert_lines"></div>
+    </div>
+    <div class="wrap">
+        <div class="header">
+            {{ if ne LogoURL "" }}
+                <img src="{{ LogoURL }}" alt="listmonk" />
+            {{ end }}
+        </div>
+{{ end }}
+
+{{ define "footer" }}
+    </div>
+    
+    <div class="footer">
+        <p>Powered by <a href="https://listmonk.app" target="_blank">listmonk</a></p>
+    </div>
+    <div class="gutter">&nbsp;</div>
+</body>
+</html>
+{{ end }}
